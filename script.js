@@ -68,9 +68,6 @@ setInterval(drawMatrix,40);
 window.addEventListener('scroll',()=>{
   const pct=(window.scrollY/(document.body.scrollHeight-window.innerHeight))*100;
   document.getElementById('progressBar').style.width=pct+'%';
-  if(window.scrollY>200)unlock('[+]','Explorer');
-  if(window.scrollY>1500)unlock('[+]','Deep Diver');
-  if(pct>98)unlock('[OK]','Completionist');
 });
 
 /* ── VIDEO BACKGROUNDS ── */
@@ -136,16 +133,6 @@ function animN(el){const t=+el.dataset.target;let c=0;const iv=setInterval(()=>{
 const fObs=new IntersectionObserver(e=>{e.forEach(i=>{if(i.isIntersecting)i.target.classList.add('visible');});},{threshold:0.08});
 document.querySelectorAll('.fade-in').forEach(el=>fObs.observe(el));
 
-/* ── ACHIEVEMENTS ── */
-const done=new Set();let achT=null;
-function unlock(icon,title){
-  if(done.has(title))return;done.add(title);
-  document.getElementById('achIcon').textContent=icon;
-  document.getElementById('achTitle').textContent=title;
-  const p=document.getElementById('achPopup');p.classList.add('show');
-  clearTimeout(achT);achT=setTimeout(()=>p.classList.remove('show'),3200);
-}
-
 /* ── TOAST ── */
 function toast(msg){
   const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');
@@ -157,7 +144,6 @@ function setMood(btn,who,resp){
   document.querySelectorAll('.mood-btn').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');
   document.getElementById('moodResp').textContent=resp;
-  unlock('[:]','Mood Shared');
 }
 
 /* ── EXPAND CARD (interests, hobbies, games) ── */
@@ -167,7 +153,6 @@ function expandCard(el,icon,title,desc){
   if(!isOpen){
     el.classList.add('open');
     el.querySelector('.card-drawer').textContent=desc;
-    unlock(icon,title);
   }
 }
 
@@ -178,21 +163,20 @@ function expandMovie(el,icon,title,filmTitle,meta,desc){
   if(!isOpen){
     el.classList.add('open');
     el.querySelector('.movie-drawer').textContent='> '+desc;
-    unlock(icon,title);
   }
 }
 
 /* ── SECRET WORD ── */
 let sec='';
 document.addEventListener('keydown',e=>{
-  if(e.key.length===1){sec=(sec+e.key.toLowerCase()).slice(-6);if(sec==='adrian'){unlock('[SHH]','Secret Found');toast('> you typed your own name lol [lol]');document.body.style.filter='brightness(1.3)';setTimeout(()=>document.body.style.filter='',600);}}
+  if(e.key.length===1){sec=(sec+e.key.toLowerCase()).slice(-6);if(sec==='adrian'){toast('> you typed your own name lol [lol]');document.body.style.filter='brightness(1.3)';setTimeout(()=>document.body.style.filter='',600);}}
 });
 
 /* ── LOGO CLICK x5 ── */
 let lc=0,lt=null;
 document.querySelector('.nav-logo').addEventListener('click',()=>{
   lc++;clearTimeout(lt);lt=setTimeout(()=>lc=0,1800);
-  if(lc>=5){lc=0;unlock('[HSE]','Logo Clicker');toast('> ok you really clicked that 5 times bro [!!]');}
+  if(lc>=5){lc=0;toast('> ok you really clicked that 5 times bro [!!]');}
 });
 
 /* ── HAMBURGER ── */

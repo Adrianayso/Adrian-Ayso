@@ -13,22 +13,12 @@
 <canvas id="matrixCanvas"></canvas>
 <div class="progress" id="progressBar"></div>
 
-<!-- ACHIEVEMENT -->
-<div class="ach-popup" id="achPopup">
-  <span class="ach-label">▶ ACHIEVEMENT UNLOCKED</span>
-  <div style="display:flex;align-items:center;gap:8px;margin-top:4px;">
-    <span class="ach-icon" id="achIcon">[★]</span>
-    <span class="ach-title" id="achTitle">—</span>
-  </div>
-</div>
-
 <div id="toast"></div>
 
 <!-- NAV -->
 <nav>
   <div class="nav-logo" onclick="window.scrollTo({top:0,behavior:'smooth'})">ADRIAN<span>_AYSO</span>.exe</div>
   <div class="nav-links">
-    <a href="#projects">PROJECTS</a>
     <a href="#interests">INTERESTS</a>
     <a href="#gaming">GAMING</a>
     <a href="#cinema">CINEMA</a>
@@ -38,7 +28,6 @@
   </div>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#projects" onclick="toggleMenu()">▶ PROJECTS</a>
   <a href="#interests" onclick="toggleMenu()">▶ INTERESTS</a>
   <a href="#gaming" onclick="toggleMenu()">▶ GAMING</a>
   <a href="#cinema" onclick="toggleMenu()">▶ CINEMA</a>
@@ -51,26 +40,23 @@
   <div class="pixel-deco pixel-deco-2"><img src="portfolio pics/pixel icons/download CAT.jpg" alt=""></div>
 
   <div class="hero-left">
-    <p class="hero-top">[ STATUS: <span>ONLINE</span> ] [ LOCATION: <span>MANILA_PH</span> ] [ BUILD: <span>v1.7.2025</span> ]</p>
+    <p class="hero-top">[ STATUS: <span>ONLINE</span> ] [ LOCATION: <span>PASAY_PH</span> ] [ BUILD: <span>v1.7.2025</span> ]</p>
     <h1>ADRIAN<br>AYSO<span class="blink">_</span></h1>
     <p class="hero-sub">// <span class="highlight" id="typedHero"></span></p>
     <div class="terminal">
-      <div class="term-line">&gt; NAME: <span><span class="val">Adrian Ayso</span></span></div>
+      <div class="term-line">&gt; NAME: <span><span class="val">ADRIAN AYSO</span></span></div>
       <div class="term-line">&gt; AGE: <span><span class="val">18</span></span></div>
-      <div class="term-line">&gt; CLASS: <span><span class="val">Aspiring IT Student</span></span></div>
-      <div class="term-line">&gt; SPEC: <span><span class="val">Front-end Developer</span></span></div>
-      <div class="term-line">&gt; LOCATION: <span><span class="val">Manila, Philippines</span></span></div>
-      <div class="term-line">&gt; STATUS: <span style="color:var(--green);">ACTIVELY BUILDING<span class="term-cursor"></span></span></div>
+      <div class="term-line">&gt; LOCATION: <span><span class="val">PASAY, PHILIPPINES</san></span></div>
+      <div class="term-line">&gt; STATUS: <span style="color:var(--green);">UNDERGRADUATE IT STUDENT<span class="term-cursor"></span></span></div>
     </div>
     <div class="pixel-stats">
       <div class="pstat"><span class="pstat-num" data-target="18">0</span><span class="pstat-label">AGE</span></div>
-      <div class="pstat"><span class="pstat-num" data-target="2">0</span><span class="pstat-label">PROJECTS</span></div>
-      <div class="pstat"><span class="pstat-num" data-target="5">0</span><span class="pstat-label">FAV FILMS</span></div>
+      <div class="pstat"><span class="pstat-num" data-target="6">0</span><span class="pstat-label">FAV FILMS</span></div>
       <div class="pstat"><span class="pstat-num" data-target="7">0</span><span class="pstat-label">FAV GAMES</span></div>
     </div>
     <div class="hero-btns">
-      <button class="px-btn" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">[ MY PROJECTS ]</button>
-      <button class="px-btn ghost" onclick="document.getElementById('interests').scrollIntoView({behavior:'smooth'})">[ INTERESTS ]</button>
+      <button class="px-btn" onclick="document.getElementById('interests').scrollIntoView({behavior:'smooth'})">[ INTERESTS ]</button>
+      <button class="px-btn ghost" onclick="document.getElementById('gaming').scrollIntoView({behavior:'smooth'})">[ GAMING ]</button>
     </div>
   </div>
 
@@ -78,55 +64,6 @@
     <img class="hero-photo-img" src="portfolio pics/ME AND THE OTHER BACKROUND/adrianaysoproject1-ezgif.com-video-to-gif-converter.gif" alt="Adrian Ayso">
   </div>
 </div>
-
-<!-- PROJECTS -->
-<div class="wrap" id="projects">
-  <div class="section fade-in">
-    <p class="sec-label">DEPLOYED</p>
-    <h2 class="sec-title">PROJECTS.exe</h2>
-    <p style="font-size:16px;color:var(--darkgreen);margin-bottom:2rem;">> 2 projects shipped and live — click to visit</p>
-    <div class="proj-grid">
-
-      <div class="proj-card unavailable" onclick="toast('ASKBRO is currently unavailable')">
-        <div class="proj-header">
-          <div class="proj-num">PROJECT_01</div>
-          <div class="proj-status">UNAVAILABLE ●</div>
-        </div>
-        <div class="proj-title">ASKBRO</div>
-        <div class="proj-tag-row">
-          <span class="proj-tag">AI CHATBOT</span>
-          <span class="proj-tag">VERCEL</span>
-        </div>
-        <p class="proj-desc">> Server is down for now. This project will be back online when the build is restored.</p>
-        <div class="proj-footer">
-          <span class="proj-link">askbro-five.vercel.app</span>
-          <span class="proj-arrow">[ SERVER DOWN ]</span>
-        </div>
-      </div>
-
-      <div class="proj-card" onclick="unlock('[NEW]','Tsismis Deployed');window.open('https://tsismis-phi.vercel.app/','_blank')">
-        <div class="proj-header">
-          <div class="proj-num">PROJECT_02</div>
-          <div class="proj-status">LIVE ●</div>
-        </div>
-        <div class="proj-title">TSISMIS</div>
-        <div class="proj-tag-row">
-          <span class="proj-tag">NEWS APP</span>
-          <span class="proj-tag">AI SUMMARY</span>
-          <span class="proj-tag">PH</span>
-        </div>
-        <p class="proj-desc">> Latest Philippine news with AI-powered summaries. Understand what's happening in the world in clear, short, readable language.</p>
-        <div class="proj-footer">
-          <span class="proj-link">tsismis-phi.vercel.app</span>
-          <span class="proj-arrow">[ LAUNCH ▶ ]</span>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-<div class="divider"></div>
 
 <!-- MOOD -->
 <div class="wrap">
@@ -163,19 +100,24 @@
     <p class="sec-label">MODULES</p>
     <h2 class="sec-title">INTERESTS.dat</h2>
     <div class="int-grid">
-      <div class="int-card" onclick="expandCard(this,'[PC]','Web Wizard','> Building interfaces that look good and work even better. Adrian\'s primary passion.')">
+      <div class="int-card" onclick="expandCard(this,'[PC]','Web Wizard','> I build websites and pages you can actually click through. If you are on this site, you are already looking at that.')">
         <div class="int-icon-wrap"><img class="int-icon" src="portfolio pics/pixel icons/8-bit computer.jpg" alt="Web dev"></div>
-        <div class="int-body"><div class="int-name">WEB DEV</div><div class="int-sub">Interfaces & builds</div></div>
+        <div class="int-body"><div class="int-name">WEB DEV</div><div class="int-sub">Websites & interfaces</div></div>
         <div class="card-drawer"></div>
       </div>
-      <div class="int-card" onclick="expandCard(this,'[DEV]','Code Machine','> Logic, algorithms and systems. Writing code that solves real problems elegantly.')">
+      <div class="int-card" onclick="expandCard(this,'[DEV]','Code Machine','> I write code that makes things work. If you like breaking stuff and fixing it, we would get along.')">
         <div class="int-icon-wrap"><img class="int-icon" src="portfolio pics/pixel icons/PROGRAMMING.jpg" alt="Programming"></div>
         <div class="int-body"><div class="int-name">PROGRAMMING</div><div class="int-sub">Logic & systems</div></div>
         <div class="card-drawer"></div>
       </div>
-      <div class="int-card" onclick="expandCard(this,'[ART]','Design Eye','> Where function meets form. Making things that feel right to use, not just look right.')">
+      <div class="int-card" onclick="expandCard(this,'[ART]','Design Eye','> I design software so it feels right when you use it, not just pretty in a screenshot. You should not have to guess where to click.')">
         <div class="int-icon-wrap"><img class="int-icon" src="portfolio pics/pixel icons/Pixel app icon.jpg" alt="Design"></div>
         <div class="int-body"><div class="int-name">SOFTWARE DESIGN</div><div class="int-sub">UX & architecture</div></div>
+        <div class="card-drawer"></div>
+      </div>
+      <div class="int-card" onclick="expandCard(this,'[HW]','Board Tinkerer','> Arduino, ESP32, sensors, blinking LEDs and a little chaos.')">
+        <div class="int-icon-wrap"><img class="int-icon" src="portfolio pics/pixel icons/download (6).jpg" alt="Embedded systems"></div>
+        <div class="int-body"><div class="int-name">EMBEDDED SYSTEMS</div><div class="int-sub">Arduino & ESP32</div></div>
         <div class="card-drawer"></div>
       </div>
     </div>
@@ -190,19 +132,19 @@
     <p class="sec-label">ACTIVITIES</p>
     <h2 class="sec-title">HOBBIES.dat</h2>
     <div class="hob-grid">
-      <div class="hob-card" onclick="expandCard(this,'[BK]','Bookworm','> Loves diving into books. Stories and knowledge feed the curiosity that drives his builds.')">
+      <div class="hob-card" onclick="expandCard(this,'[BK]','Bookworm','> If you ever need a book rec, I have too many. I read to steal ideas and stay curious.')">
         <div class="hob-icon-wrap"><img class="hob-icon" src="portfolio pics/pixel icons/book pixel art icon.jpg" alt="Reading"></div>
         <div class="hob-body"><div class="hob-name">READING</div><div class="hob-sub">Books & knowledge</div><div class="card-drawer"></div></div>
       </div>
-      <div class="hob-card" onclick="expandCard(this,'[CAM]','Cinephile','> Series and films are his thing. Massive taste — from Pixar to psychological thrillers.')">
+      <div class="hob-card" onclick="expandCard(this,'[CAM]','Cinephile','> Sit down. I will talk your ear off about movies and series. Taste is not up for debate.')">
         <div class="hob-icon-wrap"><img class="hob-icon" src="portfolio pics/pixel icons/Corona.jpg" alt="Films"></div>
         <div class="hob-body"><div class="hob-name">SERIES & FILMS</div><div class="hob-sub">Stories & cinema</div><div class="card-drawer"></div></div>
       </div>
-      <div class="hob-card" onclick="expandCard(this,'[CTR]','Gamer','> Narrative-driven open world games. Cyberpunk, Detroit, Dying Light — taste is elite.')">
+      <div class="hob-card" onclick="expandCard(this,'[CTR]','Gamer','> Open worlds and story games. If you play Cyberpunk or Detroit, we can talk for hours.')">
         <div class="hob-icon-wrap"><img class="hob-icon" src="portfolio pics/pixel icons/download (10).jpg" alt="Gaming"></div>
         <div class="hob-body"><div class="hob-name">VIDEO GAMES</div><div class="hob-sub">Open world & story</div><div class="card-drawer"></div></div>
       </div>
-      <div class="hob-card" onclick="expandCard(this,'[STR]','Iron Man','> Gym is the other grind. Discipline in the gym carries over to discipline in the code.')">
+      <div class="hob-card" onclick="expandCard(this,'[STR]','Iron Man','> Gym is the other grind. If I am not at a keyboard, I am probably lifting.')">
         <div class="hob-icon-wrap"><img class="hob-icon" src="portfolio pics/pixel icons/download (4).jpg" alt="Gym"></div>
         <div class="hob-body"><div class="hob-name">GYM & LIFTING</div><div class="hob-sub">Discipline & gains</div><div class="card-drawer"></div></div>
       </div>
@@ -299,6 +241,11 @@
         <div class="movie-info"><p class="movie-num">FILE_05</p><p class="movie-title">THE SOCIAL NETWORK</p><p class="movie-meta">Drama / Bio / 2010</p><p class="movie-expand-hint">> CLICK TO ACCESS FILE</p></div></div>
         <div class="movie-drawer"></div>
       </div>
+      <div class="movie-card" onclick="expandMovie(this,'[SV]','Startup Chaos','SILICON VALLEY','Comedy / Series / 2014','Yes, this one is a series. Pied Piper, compression, and startup chaos. If you code, you will feel attacked in the best way.')">
+        <div class="movie-card-top"><div class="movie-poster movie-poster-fallback">[TV]</div>
+        <div class="movie-info"><p class="movie-num">FILE_06</p><p class="movie-title">SILICON VALLEY</p><p class="movie-meta">Comedy / Series / 2014</p><p class="movie-expand-hint">> CLICK TO ACCESS FILE</p></div></div>
+        <div class="movie-drawer"></div>
+      </div>
     </div>
   </div>
 </div>
@@ -315,7 +262,7 @@
       <div class="goal-monster goal-monster-left"><img src="portfolio pics/pixel icons/download (8).jpg" alt="monster"></div>
       <div class="goal-monster goal-monster-right"><img src="portfolio pics/pixel icons/download (14).jpg" alt="monster"></div>
       <div class="goal-overlay"></div>
-      <p class="goal-text">To grow as a developer by <span class="hl">continuously building projects</span>, sharpening technical skills, and gaining real experience creating <span class="hl">useful and meaningful digital applications</span> — one project at a time.</p>
+      <p class="goal-text">To grow as a developer by <span class="hl">continuously building</span>, sharpening technical skills, and gaining real experience creating <span class="hl">useful and meaningful digital applications</span>.</p>
     </div>
   </div>
 </div>
